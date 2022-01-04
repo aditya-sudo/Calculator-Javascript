@@ -1,5 +1,7 @@
-.display {
-  width: 100px;
+#display {
+  min-width: 420px;
+  min-height: 50px;
+  border-color: white;
 }
 #btn {
   padding-left: 25px;
