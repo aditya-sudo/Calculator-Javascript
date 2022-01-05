@@ -16,23 +16,35 @@
   <body>
     <br />
     <div class="container">
-      <div>
-        <input id="display" type="text" placeholder="0" />
-      </div>
+      <div id="display"></div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="btn1">DEG</button>
-          <button type="button" class="btn btn-light" id="btn1">F-E</button>
+          <button type="button" class="btn btn-light btn1" id="DEGbtn">
+            DEG
+          </button>
+          <button type="button" class="btn btn-light btn1" id="FEbtn">
+            F-E
+          </button>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="btn2">MC</button>
-          <button type="button" class="btn btn-light" id="btn2">MR</button>
-          <button type="button" class="btn btn-light" id="btn1">M+</button>
-          <button type="button" class="btn btn-light" id="btn1">M-</button>
-          <button type="button" class="btn btn-light" id="btn1">MS</button>
+          <button type="button" class="btn btn-light btn2" id="MCbtn">
+            MC
+          </button>
+          <button type="button" class="btn btn-light btn2" id="MRbtn">
+            MR
+          </button>
+          <button type="button" class="btn btn-light btn1" id="M+btn">
+            M+
+          </button>
+          <button type="button" class="btn btn-light btn1" id="M-btn">
+            M-
+          </button>
+          <button type="button" class="btn btn-light btn1" id="MSbtn">
+            MS
+          </button>
         </div>
       </div>
       <div class="row">
@@ -42,7 +54,6 @@
             class="btn btn-light btn-sm dropdown-toggle"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-            id="btn"
           >
             Trigonometry
           </button>
@@ -51,7 +62,6 @@
             class="btn btn-light btn-sm dropdown-toggle"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-            id="btn"
           >
             Function
           </button>
@@ -59,94 +69,274 @@
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="btn">
+          <button type="button" class="btn btn-light" id="2btn">
             2<sup>nd</sup>
           </button>
-          <button type="button" class="btn btn-light" id="btn">π</button>
-          <button type="button" class="btn btn-light" id="btn">e</button>
-          <button type="button" class="btn btn-light" id="btn">C</button>
-          <button type="button" class="btn btn-light" id="btn">⌫</button>
+          <button type="button" class="btn btn-light" id="pie" onclick="pi()">
+            π
+          </button>
+          <button type="button" class="btn btn-light" id="ebtn">e</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="Cbtn"
+            onclick="clearscreen()"
+          >
+            C
+          </button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="remove"
+            onclick="del('display')"
+          >
+            ⌫
+          </button>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="btn">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="square"
+            onclick="square('display')"
+          >
             x<sup>2</sup>
           </button>
-          <button type="button" class="btn btn-light" id="btn">1/x</button>
-          <button type="button" class="btn btn-light" id="btn">|x|</button>
-          <button type="button" class="btn btn-light" id="btn">exp</button>
-          <button type="button" class="btn btn-light" id="btn">mod</button>
+          <button type="button" class="btn btn-light" id="upon">1/x</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="modulus"
+            onclick="absolute('display')"
+          >
+            |x|
+          </button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="exp"
+            onclick="expo('display')"
+          >
+            exp
+          </button>
+          <button type="button" class="btn btn-light" id="mod">mod</button>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="btn">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="root"
+            onclick="root('display')"
+          >
             <sup>2</sup>√x
           </button>
-          <button type="button" class="btn btn-light" id="btn">(</button>
-          <button type="button" class="btn btn-light" id="btn">)</button>
-          <button type="button" class="btn btn-light" id="btn">n!</button>
-          <button type="button" class="btn btn-light" id="operator">÷</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="open"
+            onclick="print('open')"
+          >
+            (
+          </button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="close"
+            onclick="print('close')"
+          >
+            )
+          </button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="fact"
+            onclick="fact('display')"
+          >
+            n!
+          </button>
+          <button
+            type="button"
+            class="btn btn-light operator"
+            id="div"
+            onclick="print('div')"
+          >
+            ÷
+          </button>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="btn">
+          <button type="button" class="btn btn-light" id="xpower">
             x<sup>y</sup>
           </button>
 
-          <button type="button" class="btn btn-light" id="num">
-            <b>7</b>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="seven"
+            onclick="print('seven')"
+          >
+            7
           </button>
-          <button type="button" class="btn btn-light" id="num">
-            <b>8</b>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="eight"
+            onclick="print('eight')"
+          >
+            8
           </button>
-          <button type="button" class="btn btn-light" id="num">
-            <b>9</b>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="nine"
+            onclick="print('nine')"
+          >
+            9
           </button>
-          <button type="button" class="btn btn-light" id="operator">×</button>
+          <button
+            type="button"
+            class="btn btn-light operator"
+            id="mul"
+            onclick="print('mul')"
+          >
+            ×
+          </button>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="btn">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="power"
+            onclick="power10('display')"
+          >
             10<sup>x</sup>
           </button>
 
-          <button type="button" class="btn btn-light" id="num">
-            <b>4</b>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="four"
+            onclick="print('four')"
+          >
+            4
           </button>
-          <button type="button" class="btn btn-light" id="num">
-            <b>5</b>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="five"
+            onclick="print('five')"
+          >
+            5
           </button>
-          <button type="button" class="btn btn-light" id="num">
-            <b>6</b>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="six"
+            onclick="print('six')"
+          >
+            6
           </button>
-          <button type="button" class="btn btn-light" id="operator">-</button>
+          <button
+            type="button"
+            class="btn btn-light operator"
+            id="sub"
+            onclick="print('sub')"
+          >
+            -
+          </button>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="btn">log</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="btn"
+            onclick="log('display')"
+          >
+            log
+          </button>
 
-          <button type="button" class="btn btn-light" id="num"><b>1</b></button>
-          <button type="button" class="btn btn-light" id="num"><b>2</b></button>
-          <button type="button" class="btn btn-light" id="num"><b>3</b></button>
-          <button type="button" class="btn btn-light" id="operator">+</button>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="one"
+            onclick="print('one')"
+          >
+            1
+          </button>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="two"
+            onclick="print('two')"
+          >
+            2
+          </button>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="three"
+            onclick="print('three')"
+          >
+            3
+          </button>
+          <button
+            type="button"
+            class="btn btn-light operator"
+            id="add"
+            onclick="print('add')"
+          >
+            +
+          </button>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="btn">ln</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="ln"
+            onclick="naturallog('display')"
+          >
+            ln
+          </button>
 
-          <button type="button" class="btn btn-light" id="btn">
+          <button type="button" class="btn btn-light" id="slash">
             <sup>+</sup>/<sub>-</sub>
           </button>
 
-          <button type="button" class="btn btn-light" id="num"><b>0</b></button>
-          <button type="button" class="btn btn-light" id="btn">.</button>
-          <button type="button" class="btn btn-light" id="mybtn">=</button>
+          <button
+            type="button"
+            class="btn btn-light num"
+            id="zero"
+            onclick="print('zero')"
+          >
+            0
+          </button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="dot"
+            onclick="print('dot')"
+          >
+            .
+          </button>
+          <button
+            type="button"
+            class="btn btn-light mybtn"
+            id="equalsto"
+            onclick="answer('display')"
+          >
+            =
+          </button>
         </div>
       </div>
     </div>

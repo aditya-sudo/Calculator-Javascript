@@ -1,9 +1,12 @@
 #display {
-  min-width: 420px;
-  min-height: 50px;
-  border-color: white;
+  max-width: 420px;
+  min-height: 70px;
+  background-color: whitesmoke;
+  border-color: lightsteelblue;
+  font-size: 25px;
+  font-display: flex;
 }
-#btn {
+.btn {
   padding-left: 25px;
   padding-right: 25px;
   margin-right: 2px;
@@ -13,7 +16,7 @@
   font-weight: 350;
   font-size: 15px;
 }
-#mybtn {
+.mybtn {
   padding-left: 25px;
   padding-right: 25px;
   margin-right: 2px;
@@ -24,7 +27,7 @@
   font-size: 20px;
   background-color: lightskyblue;
 }
-#num {
+.num {
   padding-left: 25px;
   padding-right: 25px;
   margin-right: 2px;
@@ -32,8 +35,9 @@
   margin-bottom: 2px;
   min-width: 80px;
   font-size: 18px;
+  font-weight: 1000;
 }
-#btn1 {
+.btn1 {
   padding-left: 25px;
   padding-right: 25px;
   margin-right: 2px;
@@ -43,7 +47,7 @@
   font-weight: 420;
   font-size: 15px;
 }
-#btn2 {
+.btn2 {
   padding-left: 25px;
   padding-right: 25px;
   margin-right: 2px;
@@ -54,7 +58,7 @@
   color: lightgray;
   font-size: 15px;
 }
-#operator {
+.operator {
   padding-left: 25px;
   padding-right: 25px;
   margin-right: 2px;
