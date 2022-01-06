@@ -20,7 +20,12 @@
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light btn1" id="DEGbtn">
+          <button
+            type="button"
+            class="btn btn-light btn1"
+            id="DEGbtn"
+            onclick="radtodeg()"
+          >
             DEG
           </button>
           <button type="button" class="btn btn-light btn1" id="FEbtn">
@@ -54,6 +59,7 @@
             class="btn btn-light btn-sm dropdown-toggle"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            id="dropdownMenuButton1"
           >
             Trigonometry
           </button>
@@ -62,6 +68,7 @@
             class="btn btn-light btn-sm dropdown-toggle"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            id="dropdownMenuButton2"
           >
             Function
           </button>
@@ -75,7 +82,14 @@
           <button type="button" class="btn btn-light" id="pie" onclick="pi()">
             π
           </button>
-          <button type="button" class="btn btn-light" id="ebtn">e</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="ebtn"
+            onclick="print('ebtn')"
+          >
+            e
+          </button>
           <button
             type="button"
             class="btn btn-light"
@@ -100,28 +114,38 @@
             type="button"
             class="btn btn-light"
             id="square"
-            onclick="square('display')"
+            onclick="square()"
           >
             x<sup>2</sup>
           </button>
-          <button type="button" class="btn btn-light" id="upon">1/x</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="inverse"
+            onclick="inverse()"
+          >
+            1/x
+          </button>
           <button
             type="button"
             class="btn btn-light"
             id="modulus"
-            onclick="absolute('display')"
+            onclick="absolute()"
           >
             |x|
+          </button>
+          <button type="button" class="btn btn-light" id="exp" onclick="expo()">
+            exp
           </button>
           <button
             type="button"
             class="btn btn-light"
-            id="exp"
-            onclick="expo('display')"
+            id="mod"
+            onclick="print('modul')"
           >
-            exp
+            mod
           </button>
-          <button type="button" class="btn btn-light" id="mod">mod</button>
+          <p hidden id="modul">%</p>
         </div>
       </div>
       <div class="row">
@@ -130,7 +154,7 @@
             type="button"
             class="btn btn-light"
             id="root"
-            onclick="root('display')"
+            onclick="root()"
           >
             <sup>2</sup>√x
           </button>
@@ -154,7 +178,7 @@
             type="button"
             class="btn btn-light"
             id="fact"
-            onclick="fact('display')"
+            onclick="fact()"
           >
             n!
           </button>
@@ -162,18 +186,24 @@
             type="button"
             class="btn btn-light operator"
             id="div"
-            onclick="print('div')"
+            onclick="print('divi')"
           >
             ÷
           </button>
+          <p hidden id="divi">/</p>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="xpower">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="xpower"
+            onclick="power()"
+          >
             x<sup>y</sup>
           </button>
-
+          <p hidden id="upon">^</p>
           <button
             type="button"
             class="btn btn-light num"
@@ -202,10 +232,11 @@
             type="button"
             class="btn btn-light operator"
             id="mul"
-            onclick="print('mul')"
+            onclick="print('star')"
           >
             ×
           </button>
+          <p hidden id="star">*</p>
         </div>
       </div>
       <div class="row">
@@ -214,11 +245,11 @@
             type="button"
             class="btn btn-light"
             id="power"
-            onclick="power10('display')"
+            onclick="power10()"
           >
             10<sup>x</sup>
           </button>
-
+          <p hidden id="ten">10</p>
           <button
             type="button"
             class="btn btn-light num"
@@ -255,12 +286,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <button
-            type="button"
-            class="btn btn-light"
-            id="btn"
-            onclick="log('display')"
-          >
+          <button type="button" class="btn btn-light" id="btn" onclick="log()">
             log
           </button>
 
@@ -304,12 +330,17 @@
             type="button"
             class="btn btn-light"
             id="ln"
-            onclick="naturallog('display')"
+            onclick="naturallog()"
           >
             ln
           </button>
 
-          <button type="button" class="btn btn-light" id="slash">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="slash"
+            onclick="signchange()"
+          >
             <sup>+</sup>/<sub>-</sub>
           </button>
 
