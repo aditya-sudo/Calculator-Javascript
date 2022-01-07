@@ -5,6 +5,8 @@ function print(x) {
 function answer(x) {
   let y = document.getElementById(x).innerText.toString();
   y = y.replace("^", "**");
+  y = y.replace("×", "*");
+  y = y.replace("÷", "/");
   document.getElementById("display").innerText = eval(y);
 }
 function clearscreen() {
@@ -62,4 +64,42 @@ function inverse() {
 }
 function radtodeg() {
   display.innerText = display.innerText * (180 / 3.14159);
+}
+function cosine() {
+  display.innerText = Math.cos(display.innerText);
+}
+function sin() {
+  display.innerText = Math.sin(display.innerText);
+}
+function tan() {
+  display.innerText = Math.tan(display.innerText);
+}
+function ceil() {
+  display.innerText = Math.ceil(display.innerText);
+}
+function floor() {
+  display.innerText = Math.floor(display.innerText);
+}
+function round() {
+  display.innerText = Math.round(display.innerText);
+}
+function expo() {
+  display.innerText = Number.parseFloat(display.innerText).toExponential(3);
+}
+var memoryRegister = [];
+function memorysave() {
+  var num = Number(display.innerText);
+  if (Number.isNaN(num)) return;
+  memoryRegister.push(num);
+}
+function memoryclear() {
+  memoryRegister = [];
+}
+function memory() {
+  for (i = 0; i < memoryRegister.length; i++) {
+    display.innerText = display.innerText + " , " + memoryRegister.pop();
+  }
+}
+function memoryminus() {
+  memoryRegister.pop();
 }
