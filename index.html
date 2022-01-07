@@ -12,6 +12,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <br />
@@ -20,51 +26,116 @@
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light btn1" id="DEGbtn">
+          <button
+            type="button"
+            class="btn btn-light btn1"
+            id="DEGbtn"
+            onclick="radtodeg()"
+          >
             DEG
           </button>
-          <button type="button" class="btn btn-light btn1" id="FEbtn">
+          <button
+            type="button"
+            class="btn btn-light btn1"
+            id="FEbtn"
+            onclick="expo()"
+          >
             F-E
           </button>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light btn2" id="MCbtn">
+          <button
+            type="button"
+            class="btn btn-light btn2"
+            id="MCbtn"
+            onclick="memoryclear()"
+          >
             MC
           </button>
-          <button type="button" class="btn btn-light btn2" id="MRbtn">
+          <button
+            type="button"
+            class="btn btn-light btn2"
+            id="MRbtn"
+            onclick="memory()"
+          >
             MR
           </button>
-          <button type="button" class="btn btn-light btn1" id="M+btn">
+          <button
+            type="button"
+            class="btn btn-light btn1"
+            id="M+btn"
+            onclick="memorysave()"
+          >
             M+
           </button>
-          <button type="button" class="btn btn-light btn1" id="M-btn">
+          <button
+            type="button"
+            class="btn btn-light btn1"
+            id="M-btn"
+            onclick="memoryminus()"
+          >
             M-
           </button>
-          <button type="button" class="btn btn-light btn1" id="MSbtn">
+          <button
+            type="button"
+            class="btn btn-light btn1"
+            id="MSbtn"
+            onclick="memorysave()"
+          >
             MS
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <button
-            type="button"
-            class="btn btn-light btn-sm dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Trigonometry
-          </button>
-          <button
-            type="button"
-            class="btn btn-light btn-sm dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Function
-          </button>
+      <div class="col">
+        <div class="d-flex">
+          <div class="dropdown me-1">
+            <button
+              type="button"
+              class="btn btn-light btn-sm dropdown-toggle"
+              id="dropdownMenuOffset"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              data-bs-offset="10,20"
+            >
+              Trigonometry
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+              <li>
+                <a class="dropdown-item" href="#" onclick="cosine()">cos()</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" onclick="sin()">sin()</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" onclick="tan()">tan()</a>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown me-1">
+            <button
+              type="button"
+              class="btn btn-light btn-sm dropdown-toggle"
+              id="dropdownMenuOffset"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              data-bs-offset="10,20"
+            >
+              Function
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+              <li>
+                <a class="dropdown-item" href="#" onclick="ceil()">Ceil()</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" onclick="floor()">floor()</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" onclick="round()">round()</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -75,7 +146,14 @@
           <button type="button" class="btn btn-light" id="pie" onclick="pi()">
             π
           </button>
-          <button type="button" class="btn btn-light" id="ebtn">e</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="ebtn"
+            onclick="print('ebtn')"
+          >
+            e
+          </button>
           <button
             type="button"
             class="btn btn-light"
@@ -100,28 +178,38 @@
             type="button"
             class="btn btn-light"
             id="square"
-            onclick="square('display')"
+            onclick="square()"
           >
             x<sup>2</sup>
           </button>
-          <button type="button" class="btn btn-light" id="upon">1/x</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="inverse"
+            onclick="inverse()"
+          >
+            1/x
+          </button>
           <button
             type="button"
             class="btn btn-light"
             id="modulus"
-            onclick="absolute('display')"
+            onclick="absolute()"
           >
             |x|
+          </button>
+          <button type="button" class="btn btn-light" id="exp" onclick="expo()">
+            exp
           </button>
           <button
             type="button"
             class="btn btn-light"
-            id="exp"
-            onclick="expo('display')"
+            id="mod"
+            onclick="print('modul')"
           >
-            exp
+            mod
           </button>
-          <button type="button" class="btn btn-light" id="mod">mod</button>
+          <p hidden id="modul">%</p>
         </div>
       </div>
       <div class="row">
@@ -130,7 +218,7 @@
             type="button"
             class="btn btn-light"
             id="root"
-            onclick="root('display')"
+            onclick="root()"
           >
             <sup>2</sup>√x
           </button>
@@ -154,7 +242,7 @@
             type="button"
             class="btn btn-light"
             id="fact"
-            onclick="fact('display')"
+            onclick="fact()"
           >
             n!
           </button>
@@ -170,10 +258,15 @@
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" id="xpower">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="xpower"
+            onclick="power()"
+          >
             x<sup>y</sup>
           </button>
-
+          <p hidden id="upon">^</p>
           <button
             type="button"
             class="btn btn-light num"
@@ -214,11 +307,11 @@
             type="button"
             class="btn btn-light"
             id="power"
-            onclick="power10('display')"
+            onclick="power10()"
           >
             10<sup>x</sup>
           </button>
-
+          <p hidden id="ten">10</p>
           <button
             type="button"
             class="btn btn-light num"
@@ -255,12 +348,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <button
-            type="button"
-            class="btn btn-light"
-            id="btn"
-            onclick="log('display')"
-          >
+          <button type="button" class="btn btn-light" id="btn" onclick="log()">
             log
           </button>
 
@@ -304,12 +392,17 @@
             type="button"
             class="btn btn-light"
             id="ln"
-            onclick="naturallog('display')"
+            onclick="naturallog()"
           >
             ln
           </button>
 
-          <button type="button" class="btn btn-light" id="slash">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="slash"
+            onclick="signchange()"
+          >
             <sup>+</sup>/<sub>-</sub>
           </button>
 
